@@ -1,0 +1,15 @@
+.content {
+    display: flex;
+    max-width: 960px;
+    padding: 1rem 2rem;
+    flex-direction: column;
+    align-items: center;
+    border: darkgrey;
+    border-style: solid;
+    box-shadow: 2px 4px 8px black;
+
+    color: black;
+    ul {
+        align-self: flex-start;
+    }
+}

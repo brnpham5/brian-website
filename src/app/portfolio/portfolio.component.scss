@@ -1,0 +1,22 @@
+.content {
+    display: flex;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.portfolio-card {
+    width: 100%;
+    max-width: 40rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.portfolio-card .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }

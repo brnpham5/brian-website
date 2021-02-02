@@ -1,0 +1,225 @@
+$banner-image: url('../assets/sky-background/Colorful_green_sky_background_with_clouds_and_sun_with_rays.jpg');
+$breakpoint: 767;
+$min-width: 400;
+$nav-height: 64;
+
+
+body {
+  min-width: $min-width + 0px;
+}
+
+.toolbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  position: absolute;
+  z-index: 10;
+
+  .nav-button{
+    color: white;
+    margin-right: 5px;
+  }
+
+  #nav-icon2 span {
+    display: block;
+    position: absolute;
+    height: 6px;
+    width: 60%;
+    background: white;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
+  
+  #nav-icon2 span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+  }
+  
+  #nav-icon2 span:nth-child(odd) {
+    left:0px;
+    border-radius: 9px 0 0 9px;
+  }
+  
+  #nav-icon2 span:nth-child(1), #nav-icon2 span:nth-child(2) {
+    top: 10%;
+  }
+  
+  #nav-icon2 span:nth-child(3), #nav-icon2 span:nth-child(4) {
+    top: 43%;
+  }
+  
+  #nav-icon2 span:nth-child(5), #nav-icon2 span:nth-child(6) {
+    top: 76%;
+  }
+  
+  #nav-icon2.open span:nth-child(1),#nav-icon2.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  #nav-icon2.open span:nth-child(2),#nav-icon2.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  
+  #nav-icon2.open span:nth-child(1) {
+    left: 4px;
+    top: 10px;
+  }
+  
+  #nav-icon2.open span:nth-child(2) {
+    left: calc(50% - 4px);
+    top: 10px;
+  }
+  
+  #nav-icon2.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+  }
+  
+  #nav-icon2.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+  }
+  
+  #nav-icon2.open span:nth-child(5) {
+    left: 4px;
+    top: 25px;
+  }
+  
+  #nav-icon2.open span:nth-child(6) {
+    left: calc(50% - 4px);
+    top: 25px;
+  }
+  
+}
+
+
+.nav-group {
+  height: $nav-height + 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  position: absolute;
+  -webkit-transition: transform .25s ease-in-out;
+  -moz-transition: transform .25s ease-in-out;
+  -o-transition: transform .25s ease-in-out;
+  transition: transform .25s ease-in-out;
+  transition-delay: .20s;
+  z-index: 10;
+
+  .button {
+    font-size: 1.25rem;
+    color: white;
+  }
+}
+
+.sidenav-container {
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .spacer{
+    height: $nav-height + 0px;
+  }
+  
+  .nav-button {
+    color: white;
+  }
+
+  .sidenav-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+    width: 200px;
+    text-align: center;
+  }
+}
+
+
+
+.content {
+  height: 650px;
+  position: relative;
+  background-image: url("../assets/sky-background/Colorful_green_sky_background_with_clouds_and_sun_with_rays.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: $nav-height + 0px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  
+  .social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    border-top: 2px solid gray;
+    padding-top: 4px;
+
+    .footer-button{
+      height: 64px;
+      width: 64px;
+      margin: 0px 2px;
+      padding: 0px;
+    }
+
+    .icon{
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint + 0px){
+  .toolbar {
+    transform: translateY(-64px);
+    -webkit-transition: transform .25s ease-in-out;
+    -moz-transition: transform .25s ease-in-out;
+    -o-transition: transform .25s ease-in-out;
+    transition: transform .25s ease-in-out;
+  }
+}
+
+@media screen and (max-width: $breakpoint + 0px) {
+  .toolbar {
+    -webkit-transition: transform .25s ease-in-out;
+    -moz-transition: transform .25s ease-in-out;
+    -o-transition: transform .25s ease-in-out;
+    transition: transform .25s ease-in-out;
+    transition-delay: .20s;
+  }
+
+  .nav-group{
+    transform: translateX(100% + 300);
+    -webkit-transition: transform .25s ease-in-out;
+    -moz-transition: transform .25s ease-in-out;
+    -o-transition: transform .25s ease-in-out;
+    transition: transform .25s ease-in-out;
+  }
+}

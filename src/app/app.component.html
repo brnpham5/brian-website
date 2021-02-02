@@ -1,65 +1,5 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
+<!--
 <style>
-  :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 8px 0;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .spacer {
-    flex: 1;
-  }
-
-  .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-  }
-
-  .toolbar img {
-    margin: 0 16px;
-  }
-
-  .toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 16px;
-  }
-
-  .toolbar #twitter-logo:hover {
-    opacity: 0.8;
-  }
-
   .content {
     display: flex;
     margin: 82px auto 32px;
@@ -297,27 +237,137 @@
     }
   }
 </style>
+-->
 
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <img
-    width="40"
-    alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
-  />
-  <span>Welcome</span>
-    <div class="spacer"></div>
-    <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Twitter">
-      <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-        <rect width="400" height="400" fill="none"/>
-        <path d="M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23" fill="#fff"/>
-      </svg>
-    </a>
-</div>
+<body class="body">
+  <!-- Toolbar -->
+  <div class="toolbar" role="toolbar">
+    <mat-toolbar color="primary">
+      <a class="nav-button" routerLink="">
+        <button mat-icon-button class="icon button-home" aria-label="Icon-button with menu icon">
+          <mat-icon>home</mat-icon>
+        </button>
+      </a>
+      <span>Brian Pham Software</span>
+      <span class="spacer"></span>
+      <button mat-icon-button class="icon button-menu" (click)="OnMenu()" aria-label="Icon-button with menu icon">
+        <!--<mat-icon>menu</mat-icon>>-->
+        <div id="nav-icon2" [ngClass]="burgerStatus ? 'open' : 'close'">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </mat-toolbar>
+  </div>
 
+
+
+ <!-- Sidenav -->
+ <mat-sidenav-container class="sidenav-container" color="primary">
+    <mat-sidenav class="sidenav" mode="over" position="end" [(opened)]="burgerStatus" color="primary">
+      <div class="spacer"></div>
+      <p>
+        <a class="nav-button" routerLink="">
+          <button mat-button class="button home" (click)="OnMenu()">
+            <span>Home</span>
+          </button>
+        </a>
+      </p>
+      <p>
+        <a class="nav-button" routerLink="/about">
+          <button mat-button class="button about" (click)="OnMenu()">
+            <span>About Me</span>
+          </button>
+        </a>
+      </p>
+      <p>
+        <a class="nav-button" routerLink="/portfolio">
+          <button mat-button class="button portfolio" (click)="OnMenu()">
+            <span>Portfolio</span>
+          </button>
+        </a>
+      </p>
+      <p>
+        <a class="nav-button" routerLink="/games">
+          <button mat-button class="button games" (click)="OnMenu()">
+            <span>Games</span>
+          </button>
+        </a>
+      </p>
+      <p>
+        <a class="nav-button" routerLink="/resume">
+          <button mat-button class="button resume" (click)="OnMenu()">
+            <span>Resume</span>
+          </button>
+        </a>
+      </p>
+      <p>
+        <a class="nav-button" routerLink="/contact">
+          <button mat-button class="button contact" (click)="OnMenu()">
+            <span>Contact</span>
+          </button>
+        </a>
+      </p>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">
+<!-- Navigation -->
+      <div class="nav-group" role="navigation">
+        <a class="nav-button" routerLink="">
+          <button mat-button class="button home">
+            <span>Home</span>
+          </button>
+        </a>
+        <a class="nav-button" routerLink="/about">
+          <button mat-button class="button about">
+            <span>About Me</span>
+          </button>
+        </a>
+        <a class="nav-button" routerLink="/portfolio">
+          <button mat-button class="button portfolio">
+            <span>Portfolio</span>
+          </button>
+        </a>
+        <a class="nav-button" routerLink="/games">
+          <button mat-button class="button games">
+            <span>Games</span>
+          </button>
+        </a>
+        <a class="nav-button" routerLink="/resume">
+          <button mat-button class="button resume">
+            <span>Resume</span>
+          </button>
+        </a>
+        <a class="nav-button" routerLink="/contact">
+          <button mat-button class="button contact">
+            <span>Contact</span>
+          </button>
+        </a>
+      </div>
+      <div class="content" [ngStyle]="{'background-image': 'url(' + currentBG + ')'}">
+        <router-outlet></router-outlet>
+      </div>
+      <footer>
+        <section class="social-links">
+          <button mat-button class="footer-button linked-in">
+            <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg">
+          </button>
+          <button mat-button class="footer-button linked-in">
+            <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg">
+          </button>
+        </section>
+      </footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</body>
+
+
+<!--
 <div class="content" role="main">
 
-  <!-- Highlight Card -->
   <div class="card highlight-card card-small">
 
     <svg id="rocket" alt="Rocket Ship" xmlns="http://www.w3.org/2000/svg" width="101.678" height="101.678" viewBox="0 0 101.678 101.678">
@@ -338,7 +388,7 @@
 
   </div>
 
-  <!-- Resources -->
+
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>
 
@@ -368,7 +418,6 @@
 
   </div>
 
-  <!-- Next Steps -->
   <h2>Next Steps</h2>
   <p>What do you want to do next with your app?</p>
 
@@ -412,7 +461,7 @@
     </div>
   </div>
 
-  <!-- Terminal -->
+
   <div class="terminal" [ngSwitch]="selection.value">
       <pre *ngSwitchDefault>ng generate component xyz</pre>
       <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
@@ -422,7 +471,7 @@
       <pre *ngSwitchCase="'build'">ng build --prod</pre>
   </div>
 
-  <!-- Links -->
+
   <div class="card-container">
     <a class="circle-link" title="Animations" href="https://angular.io/guide/animations" target="_blank" rel="noopener">
       <svg id="Group_20" data-name="Group 20" xmlns="http://www.w3.org/2000/svg" width="21.813" height="23.453" viewBox="0 0 21.813 23.453">
@@ -501,7 +550,6 @@
     </a>
   </div>
 
-  <!-- Footer -->
   <footer>
       Love Angular?&nbsp;
       <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> Give our repo a star.
@@ -520,15 +568,4 @@
   </svg>
 
 </div>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-
-<router-outlet></router-outlet>
+-->
