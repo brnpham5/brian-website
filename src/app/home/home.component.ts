@@ -1,11 +1,11 @@
-import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   //BG
   twilightBG: string = "../../assets/sky-background/Colorful_sky_in_twilight_time_background_with_clouds_and_sun_with_rays.jpg";
   daylightBG: string = "../../assets/sky-background/Colorful_green_sky_background_with_clouds_and_sun_with_rays.jpg";
@@ -17,7 +17,13 @@ export class HomeComponent implements OnInit {
 
   //Scroll Section
   scrollY: number = 0;
-  @ViewChild('welcome') welcomeCloud: any;
+  @ViewChild('welcome') welcomeCloud!: ElementRef;
+  @ViewChild('description') descriptionCloud!: ElementRef;
+  @ViewChild('codePrefs') codePrefsCloud!: ElementRef;
+
+  welcomeInView: boolean = false;
+  descriptionInView: boolean = false;
+  codePrefsInView: boolean = false;
 
   constructor() { }
   ngOnInit(){
@@ -50,9 +56,20 @@ export class HomeComponent implements OnInit {
     onScrollEvent(event: any){
       console.log(window.pageYOffset);
       this.scrollY = window.pageYOffset;
-
     }
     
+    ngAfterViewInit(){
+      console.log(this.welcomeCloud.nativeElement.getBoundingClientRect());
+      console.log(this.descriptionCloud.nativeElement.getBoundingClientRect());
+      console.log(this.codePrefsCloud.nativeElement.getBoundingClientRect());
+    }
+
+    isScrolledIntoView(element: ElementRef){
+      const rect = element.nativeElement.getBoundingClientRect();
+      const topShown = rect.top >= 0;
+      const bottomShown = rect.bottom <= window.innerHeight;
+      return topShown && bottomShown;
+    }
 }
 
 

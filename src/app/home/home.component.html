@@ -1,16 +1,16 @@
 <div class="content"  [ngStyle]="{'background-image': 'url(' + currentBG + ')'}">
     <header>
-        <section class="welcome cloud" [ngClass]="{'cloud-in': scrollY < 200, 'cloud-out': scrollY >= 200}">
+        <section #welcome class="welcome cloud" [ngClass]="{'cloud-in': scrollY < 200, 'cloud-out': scrollY >= 200}">
             <h1>Welcome to my website!</h1>
         </section>
-        <section class="description cloud" [ngClass]="{'cloud-in': scrollY < 400, 'cloud-out': scrollY >= 400}">
+        <section #description class="description cloud" [ngClass]="{'cloud-in': scrollY < 400, 'cloud-out': scrollY >= 400}">
             <p>
                 I am an all purpose web developer that has been programming since 2015.
                 I have experience and good knowledge of front-end techniques.
                 I'm currently looking for work but in the meantime I am working on various software projects.
             </p>
         </section>
-        <section class="code-prefs cloud" [ngClass]="{'cloud-in': scrollY < 600, 'cloud-out': scrollY >= 600}">
+        <section #codePrefs class="code-prefs cloud" [ngClass]="{'cloud-in': scrollY < 600, 'cloud-out': scrollY >= 600}">
             <p>
                 I enjoy the process of starting a project, from scoping, to design, to implementation. It's fun figuring what resources I have at my disposal to create something new.
                 I do my best to keep all my code simple and structured. If it gets too complicated, it's time to refactor.
