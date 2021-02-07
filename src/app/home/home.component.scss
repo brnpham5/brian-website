@@ -1,0 +1,81 @@
+
+.content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../../assets/sky-background/Colorful_green_sky_background_with_clouds_and_sun_with_rays.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .cloud {
+        
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .cloud-in{
+        -webkit-transition: transform .25s ease-out;
+        -moz-transition: transform .25s ease-out;
+        -o-transition: transform .25s ease-out;
+        transition: transform .25s ease-out;
+    }
+
+    .cloud-out:nth-child(even){
+        transform: translateX(110%);
+        -webkit-transition: transform .25s ease-out;
+        -moz-transition: transform .25s ease-out;
+        -o-transition: transform .25s ease-out;
+        transition: transform .25s ease-out;
+    }
+
+    .cloud-out:nth-child(odd){
+        transform: translateX(-110%);
+        -webkit-transition: transform .25s ease-out;
+        -moz-transition: transform .25s ease-out;
+        -o-transition: transform .25s ease-out;
+        transition: transform .25s ease-out;
+    }
+}
+
+header{
+    width: 100%;
+    max-width: 450px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 8rem;
+    text-align: center;
+
+    .welcome {
+        background-image: url("../../assets/sky-background/Cloud_01.svg");
+        padding: 90px 60px; 
+    }
+
+    .description {
+        background-image: url("../../assets/sky-background/Cloud_03.svg");
+        padding: 75px;
+    }
+
+    .code-prefs {
+        background-image: url("../../assets/sky-background/Cloud_02.svg");
+        padding: 65px;
+    }
+
+    .spacer {
+        height: 300px;
+    }
+
+}
+
+main {
+    
+}
+
+footer{
+
+}
